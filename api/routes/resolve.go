@@ -25,7 +25,7 @@ func ResolveURL(c *fiber.Ctx) error {
 	}
 
 	rInr := database.CreateClient(1)
-	defer r.Inr.Close()
+	defer rInr.Close()
 
 	_ = rInr.Incr(database.Ctx, "counter")
 
